@@ -1,0 +1,41 @@
+extends layout
+
+//-    title: string;
+    index: string;
+    videoDomain: string;
+    videoUrl: string;
+    director: string;
+    starnames: {};
+    genres: string[];
+    studio: string;
+    duration: number;
+    imgSummaryUrl: string;
+    favorite: number;
+    rating: number;
+    view: number;
+    _id: string;
+    releaseDate: string;
+block content
+                div 
+                    iframe(src=content_.videoUrl)
+                    a(href='/content/'+content_._id)
+                        h3
+                            = content_.title
+                    img(src=content_.imgSummaryUrl)
+                    p(class="tag")
+                        ='index: ' + content_.index
+                    p(class="director")
+                        ='director: ' + content_.director
+                    p(class="studio")
+                        ='studio: ' + content_.studio
+                    p(class="duration")
+                        ='duration: ' + content_.duration
+                    p(class="releaseDate")
+                        ='releaseDate: ' + content_.releaseDate
+                    p(class="view")
+                        ='view: ' + content_.view
+                    p(class="rating")
+                        ='rating: ' + content_.rating
+                    p(class="favorite")
+                        ='favorite: ' + content_.favorite
+                    

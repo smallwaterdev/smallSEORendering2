@@ -1,0 +1,17 @@
+extends layout
+
+//-     field: string;
+    name: string;
+    profile_url: string;
+    counter: number;
+block content
+    ul
+        each meta_ in metas
+            li
+                div 
+                    a(href=`/${field}/${meta_.name}`)
+                        = meta_.name
+                    if isShowImg
+                        img(src=meta_.profile_url)
+                    p(class="counter")
+                        ='counter: ' + meta_.counter
