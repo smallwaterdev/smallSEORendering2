@@ -1,6 +1,8 @@
 const request = require('request');
 const str2NonPositive = require('./helper_function').str2NonPositive;
 const origin_url = require('./config').url;
+const organizationLDJSON = require('./helper_function').organizationLDJSON;
+const websiteLDJSON = require('./helper_function').websiteLDJSON;
 // http://www.javferry.com
 // http://www.javferry.com/list/releaseDate/875
 
@@ -38,6 +40,24 @@ function generate_url(meta, name, sort, page){
     }
     return url;
 }
+function contentlistLDJSON(contents){
+    let result = {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+        "itemListElement": []
+    };
+    let itemListElement = [];
+    for(let i = 0; i < contents.length; i++){
+        itemListElement.push({
+            "@type":"ListItem",
+            "position": i + 1,
+            "url": `http://wwww.javferry.com/content/${contents[i]._id}`
+        });
+    }
+    result['itemListElement'] = itemListElement;
+    return result;
+}
+
 function content_list_handler(meta, name, sort, page, res){
     let url = generate_url(meta, name, sort, page);
     if(url === ''){
@@ -61,6 +81,9 @@ function content_list_handler(meta, name, sort, page, res){
             let contents = JSON.parse(body).value;
             res.render('content_list', { 
               title: 'Javferry' , 
+              websiteLDJSON: websiteLDJSON(),
+              organizationLDJSON: organizationLDJSON(),
+              specialLDJSON: contentlistLDJSON(contents),
               contents:contents});
           }
         }

@@ -2,6 +2,9 @@ doctype html
 html
   head
     title= title
+    script(type="application/ld+json") !{JSON.stringify(websiteLDJSON, null, 2)}
+    script(type="application/ld+json") !{JSON.stringify(organizationLDJSON, null, 2)}
+    script(type="application/ld+json") !{JSON.stringify(specialLDJSON, null, 2)}
   body
     a(href="/") Home
     a(href="/meta/category") Category

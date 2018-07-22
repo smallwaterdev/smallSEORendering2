@@ -1,6 +1,8 @@
 const request = require('request');
 const str2NonPositive = require('./helper_function').str2NonPositive;
 const origin_url = require('./config').url;
+const organizationLDJSON = require('./helper_function').organizationLDJSON;
+const websiteLDJSON = require('./helper_function').websiteLDJSON;
 function generate_url(field, page){
     const meta_name_converter = {
         'category':'genre',
@@ -22,6 +24,29 @@ function generate_url(field, page){
         }
     }
     return url;
+}
+function metalistLDJSON(metas){
+    const meta_name_converter = {
+        'genre':'category',
+        'starname':'pornstar',
+        'studio':'studio',
+        'director':'director'
+    }
+    let result = {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+        "itemListElement": []
+    };
+    let itemListElement = [];
+    for(let i = 0; i < metas.length; i++){
+        itemListElement.push({
+            "@type":"ListItem",
+            "position": i + 1,
+            "url": `http://wwww.javferry.com/${meta_name_converter[metas[i].field]}/${metas[i].name}`
+        });
+    }
+    result['itemListElement'] = itemListElement;
+    return result;
 }
 
 function meta_list_handler(field,  page, res){
@@ -48,6 +73,9 @@ function meta_list_handler(field,  page, res){
             let metas = JSON.parse(body).value;
             res.render('meta_list', { 
               title: 'Javferry' , 
+              websiteLDJSON: websiteLDJSON(),
+              organizationLDJSON: organizationLDJSON(),
+              specialLDJSON: metalistLDJSON(metas),
               metas:metas, field: field, isShowImg: field === 'pornstar'});
           }
         }
