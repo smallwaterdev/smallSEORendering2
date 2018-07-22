@@ -4,6 +4,7 @@ const origin_url = require('./config').url;
 const organizationLDJSON = require('./helper_function').organizationLDJSON;
 const websiteLDJSON = require('./helper_function').websiteLDJSON;
 function breadcrumbLDJSON(content){
+    
   return {
       "@context": "http://schema.org",
       "@type": "BreadcrumbList",
@@ -41,7 +42,6 @@ function content_handler(id, res){
               res.end(body);
             }
           }else{
-            console.log(body);
             let content = JSON.parse(body).value[0];
             res.render('content', { 
               title: 'Javferry' , 
