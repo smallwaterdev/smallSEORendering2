@@ -45,6 +45,7 @@ function content_handler(id, res){
             let content = JSON.parse(body).value[0];
             res.render('content', { 
               title: 'Javferry' , 
+              des: content.title,
               websiteLDJSON: websiteLDJSON(),
               organizationLDJSON: organizationLDJSON(),
               specialLDJSON: breadcrumbLDJSON(content),

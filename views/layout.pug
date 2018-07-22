@@ -2,6 +2,8 @@ doctype html
 html
   head
     title= title
+    <meta name="author" content="javferry.com">
+    meta(itemprop="description" name="description" content=des)
     script(type="application/ld+json") !{JSON.stringify(websiteLDJSON, null, 2)}
     script(type="application/ld+json") !{JSON.stringify(organizationLDJSON, null, 2)}
     script(type="application/ld+json") !{JSON.stringify(specialLDJSON, null, 2)}

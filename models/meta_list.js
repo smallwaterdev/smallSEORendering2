@@ -51,7 +51,13 @@ function metalistLDJSON(metas){
 }
 
 function meta_list_handler(field,  page, res){
-
+    const meta_name_converter = {
+        'category':'categories',
+        'pornstar':'pornstars',
+        'studio':'studios',
+        'director':'directors'
+    }
+    let description = `Find Jav videos by ${meta_name_converter[field]}.`;
     let url = generate_url(field, page);
     if(url === ''){
         res.statusCode = 403; 
@@ -75,6 +81,7 @@ function meta_list_handler(field,  page, res){
             res.render('meta_list', { 
               title: 'Javferry' , 
               websiteLDJSON: websiteLDJSON(),
+              des: description,
               organizationLDJSON: organizationLDJSON(),
               specialLDJSON: metalistLDJSON(metas),
               metas:metas, field: field, isShowImg: field === 'pornstar'});

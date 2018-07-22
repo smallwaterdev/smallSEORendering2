@@ -61,6 +61,12 @@ function contentlistLDJSON(contents){
 
 function content_list_handler(meta, name, sort, page, res){
     let url = generate_url(meta, name, sort, page);
+    let description = "";
+    if(meta && name){
+        description= `Watch ${name.toUpperCase()} Porn videos on Javferry.com`;
+    }else{
+        description = `Enjoy Jav Porn Videos on Javferry.com!`;
+    }
     if(url === ''){
         res.statusCode = 403; 
         res.render('error', { title: 'Javferry' , message: `Invalid arguments ${meta}, ${name}, ${sort}, ${page}`});
@@ -81,7 +87,8 @@ function content_list_handler(meta, name, sort, page, res){
           }else{
             let contents = JSON.parse(body).value;
             res.render('content_list', { 
-              title: 'Javferry' , 
+              title: 'Javferry', 
+              des: description,
               websiteLDJSON: websiteLDJSON(),
               organizationLDJSON: organizationLDJSON(),
               specialLDJSON: contentlistLDJSON(contents),
