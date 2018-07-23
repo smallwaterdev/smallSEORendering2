@@ -37,12 +37,12 @@ async.parallel([
             callback();
         });
     },
-    /*(callback)=>{
+    (callback)=>{
         content_list_generator(`${destination_dir}content-after-2018-06-28.xml`, true, new Date('2018-06-28'), ()=>{
             console.log('2018-06-28 done'); 
             callback();
         });
-    }*/
+    }
 ], ()=>{
     index_generator(`${destination_dir}sitemap.xml`, destination_dir, ()=>{
         console.log('all done');
