@@ -43,7 +43,7 @@ function metalistLDJSON(metas){
         itemListElement.push({
             "@type":"ListItem",
             "position": i + 1,
-            "url": `http://wwww.javferry.com/${meta_name_converter[metas[i].field]}/${metas[i].name}`
+            "url": `http://www.javferry.com/${meta_name_converter[metas[i].field]}/${metas[i].name}`
         });
     }
     result['itemListElement'] = itemListElement;

@@ -52,7 +52,7 @@ function contentlistLDJSON(contents){
         itemListElement.push({
             "@type":"ListItem",
             "position": i + 1,
-            "url": `http://wwww.javferry.com/content/${contents[i]._id}`
+            "url": `http://www.javferry.com/content/${contents[i]._id}`
         });
     }
     result['itemListElement'] = itemListElement;
