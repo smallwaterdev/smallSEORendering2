@@ -7,7 +7,7 @@ const destination_dir = require('./config').destination_dir;
 // filename, callback
 async.parallel([
     (callback)=>{
-        home_page_generator('init.xml', ()=>{
+        home_page_generator(`${destination_dir}init.xml`, ()=>{
             console.log('Init done');
             callback();
         });
@@ -37,12 +37,12 @@ async.parallel([
             callback();
         });
     },
-    (callback)=>{
+    /*(callback)=>{
         content_list_generator(`${destination_dir}content-after-2018-06-28.xml`, true, new Date('2018-06-28'), ()=>{
             console.log('2018-06-28 done'); 
             callback();
         });
-    }
+    }*/
 ], ()=>{
     index_generator(`${destination_dir}sitemap.xml`, destination_dir, ()=>{
         console.log('all done');
