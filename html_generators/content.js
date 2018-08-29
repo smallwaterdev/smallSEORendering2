@@ -78,7 +78,6 @@ function contentlistLDJSON(contents){
 }
 
 function genContentListHtml(field, name, sort, page, res){
-    console.log(field, name, sort);
     const field_converter = {
         pornstar:"starname",
         director:"director",
@@ -129,7 +128,6 @@ function genContentListHtml(field, name, sort, page, res){
     pageNum -= 1;
     option['limit'] = CONTENT_PRE_PAGE;
     option['skip'] = pageNum * CONTENT_PRE_PAGE;
-    console.log(condition, option);
     queryContents(condition, option, (result)=>{
         if(result.success && result.value.length > 0){
             let contents = result.value;
