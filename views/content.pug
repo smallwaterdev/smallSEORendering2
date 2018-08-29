@@ -16,12 +16,14 @@ extends layout
     _id: string;
     releaseDate: string;
 block content
-                div 
-                    iframe(src=content_.videoUrl)
-                    a(href='/content/'+content_._id)
-                        h3
-                            = content_.title
+    div(id="content-page-wrapper")
+        div(id="main-content")
+            iframe(src=content_.videoUrl  frameBorder="0")
+            
+            div(id="main-content-info")
+                div(id="main-content-image")
                     img(src=content_.imgSummaryUrl)
+                div(id="main-content-text")
                     p(class="tag")
                         ='index: ' + content_.index
                     p(class="director")
@@ -38,4 +40,28 @@ block content
                         ='rating: ' + content_.rating
                     p(class="favorite")
                         ='favorite: ' + content_.favorite
-                    
+           
+        div(class="recommend-contents-wrapper")
+            each rcontent_ in recommendContents
+                div(class="content-board")
+                    img(src=rcontent_.imgSummaryUrl)
+                    div(class="content-info")
+                        a(href='/content/'+rcontent_._id title=rcontent_.title)
+                            h4
+                                = rcontent_.title
+                        p(class="text tag")
+                            ='index: ' + rcontent_.index
+                        p(class="text director")
+                            ='director: ' + rcontent_.director
+                        p(class="text studio")
+                            ='studio: ' + rcontent_.studio
+                        p(class="text duration")
+                            ='duration: ' + rcontent_.duration
+                        p(class="text releaseDate")
+                            ='releaseDate: ' + rcontent_.releaseDate
+                        p(class="text view")
+                            ='view: ' + rcontent_.view
+                        p(class="text rating")
+                            ='rating: ' + rcontent_.rating
+                        p(class="text favorite")
+                            ='favorite: ' + rcontent_.favorite

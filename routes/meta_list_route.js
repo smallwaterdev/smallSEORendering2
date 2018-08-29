@@ -1,13 +1,13 @@
 const express = require('express');
 const metaListRoute = express.Router();
-const metaListHandler = require('../models/meta_list').meta_list_handler;
-
-function handler(req, res, next){
-    metaListHandler(req.params.field, req.params.page, res);
-}
+const genMetaHtml = require('../html_generators/meta').genMetaHtml;
 
 
-metaListRoute.get('/:field', handler);
-metaListRoute.get('/:field/:page', handler);
 
+metaListRoute.get('/:field', (req, res, next)=>{
+    genMetaHtml(req.params.field, null, res);
+});
+metaListRoute.get('/:field/:page', (req, res, next)=>{
+    genMetaHtml(req.params.field, req.params.page, res);
+});
 module.exports = metaListRoute;

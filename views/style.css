@@ -1,0 +1,190 @@
+body{
+    margin:0;
+    padding: 0;
+}
+#top-nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: black;
+    height: 60px;
+
+}
+#top-nav .nav-link{
+    font-size:16px;
+    color: white;
+    font-weight: bold;
+    width: 80px;
+    align-self: center;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+}
+#metalist_wrapper, .contents-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.content-board{
+    border: 1px solid gray;
+    width: 300px;
+    height: auto;
+    margin: 15px;
+    box-shadow: 1px 1px 1px gray;
+}
+.content-board .content-info{
+    width: 280px;
+    height: auto;
+    margin: auto;
+}
+.content-board img{
+    width: 300px;
+    height: 180px;
+}
+.content-board .content-info a{
+    text-decoration: none;
+}
+.content-board .content-info a h4{
+    line-height: 20px;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size:15px;
+    color:rgb(100,100,100);
+    margin:0;
+    padding:0;
+}
+.content-board .content-info .text{
+    line-height: 20px;
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-size:14px;
+    color:rgb(100,100,100);
+    margin:0;
+    padding:0;
+}
+.pagination{
+    margin: 10px auto 10px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pagination .pagination-btn{
+    width: 60px;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px gray;
+    
+}
+.pagination .pagination-btn:hover{
+    cursor: pointer;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+#metalist_wrapper .meta_board{
+    border: 1px solid gray;
+    width: 180px;
+    height: auto;
+    margin: 10px;
+    box-shadow: 1px 1px 1px gray;
+}
+#metalist_wrapper .meta_board img{
+    width: 180px;
+    height: 170px;
+}
+#metalist_wrapper .meta_board a{
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    color:rgb(100,100,100);
+    margin:0;
+    padding:0;
+}
+#metalist_wrapper .meta_board .counter{
+    line-height: 20px;
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-size:14px;
+    color:black;
+    margin:0;
+    padding:0;
+}
+#content-page-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1000px;
+    margin: 20px auto 20px auto;
+}
+#content-page-wrapper #main-content{
+    width: 1000px;
+    height: auto;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px gray;
+    margin: 0 0 20px 0;
+}
+#content-page-wrapper #main-content iframe{
+    width: 1000px;
+    height: 650px;
+}
+#content-page-wrapper #main-content #main-content-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 1000px;
+}
+
+#content-page-wrapper #main-content #main-content-info #main-content-image{
+    width: 300px;
+    margin: 20px;
+}
+#content-page-wrapper #main-content #main-content-info #main-content-image img{
+    width: 300px;
+    height: 200px;
+}
+#content-page-wrapper #main-content #main-content-info #main-content-text{
+    margin: 20px;
+    width: 620px;
+}
+.recommend-contents-wrapper{
+    width: 1000px;
+    height: auto;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px gray;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

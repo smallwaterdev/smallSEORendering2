@@ -5,13 +5,24 @@ extends layout
     profile_url: string;
     counter: number;
 block content
-    ul
+    div(id="metalist_wrapper")
         each meta_ in metas
-            li
-                div 
+            if !isShowImg
+                div(class="meta_board")
                     a(href=`/${field}/${meta_.name}`)
                         = meta_.name
-                    if isShowImg
-                        img(src=meta_.profile_url)
                     p(class="counter")
                         ='counter: ' + meta_.counter
+            if isShowImg
+                div(class="meta_board")
+                    img(src=meta_.profile_url)
+                    a(href=`/${field}/${meta_.name}`)
+                        = meta_.name
+                    p(class="counter")
+                        ='counter: ' + meta_.counter
+    div(class="pagination")
+        div(class="pagination-btn noselect")
+            a(href=lastpage) Previous
+        div(class="pagination-btn noselect")
+            a(href=nextpage) Next
+                

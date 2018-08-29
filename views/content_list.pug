@@ -16,28 +16,33 @@ extends layout
     _id: string;
     releaseDate: string;
 block content
-    ul
+    div(class="contents-wrapper")
         each content_ in contents
-            li 
-                div 
-                    a(href='/content/'+content_._id)
-                        h3
+            div(class="content-board")
+                img(src=content_.imgSummaryUrl)
+                div(class="content-info")
+                    a(href='/content/'+content_._id title=content_.title)
+                        h4
                             = content_.title
-                    img(src=content_.imgSummaryUrl)
-                    p(class="tag")
+                    p(class="text tag")
                         ='index: ' + content_.index
-                    p(class="director")
+                    p(class="text director")
                         ='director: ' + content_.director
-                    p(class="studio")
+                    p(class="text studio")
                         ='studio: ' + content_.studio
-                    p(class="duration")
+                    p(class="text duration")
                         ='duration: ' + content_.duration
-                    p(class="releaseDate")
+                    p(class="text releaseDate")
                         ='releaseDate: ' + content_.releaseDate
-                    p(class="view")
+                    p(class="text view")
                         ='view: ' + content_.view
-                    p(class="rating")
+                    p(class="text rating")
                         ='rating: ' + content_.rating
-                    p(class="favorite")
+                    p(class="text favorite")
                         ='favorite: ' + content_.favorite
+    div(class="pagination")
+        div(class="pagination-btn noselect")
+            a(href=lastpage) Previous
+        div(class="pagination-btn noselect")
+            a(href=nextpage) Next
                     

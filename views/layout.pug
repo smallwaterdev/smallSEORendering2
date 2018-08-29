@@ -7,10 +7,13 @@ html
     script(type="application/ld+json") !{JSON.stringify(websiteLDJSON, null, 2)}
     script(type="application/ld+json") !{JSON.stringify(organizationLDJSON, null, 2)}
     script(type="application/ld+json") !{JSON.stringify(specialLDJSON, null, 2)}
+    style
+      include style.css
   body
-    a(href="/") Home
-    a(href="/meta/category") Category
-    a(href="/meta/pornstar") Pornstar
-    a(href="/meta/director") Director
-    a(href="/meta/studio") Studio
+    div(id="top-nav")
+      a(class="nav-link" href="/") Home
+      a(class="nav-link" href="/meta/category") Category
+      a(class="nav-link" href="/meta/pornstar") Pornstar
+      a(class="nav-link" href="/meta/director") Director
+      a(class="nav-link" href="/meta/studio") Studio
     block content

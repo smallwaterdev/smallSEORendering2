@@ -1,10 +1,9 @@
 const express = require('express');
 const contentRoute = express.Router();
-const contentHandler = require('../models/content').content_handler;
+const genContentHtml = require('../html_generators/content').genContentHtml;
 
-function handler(req, res, next){
-    contentHandler(req.params.id, res);
-}
-contentRoute.get('/:id', handler);
+contentRoute.get('/:id', (req, res, next)=>{
+    genContentHtml(req.params.id, res);
+});
 
 module.exports = contentRoute;
