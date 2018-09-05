@@ -188,3 +188,6 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
 }
+p{
+    font-size:16px;
+}

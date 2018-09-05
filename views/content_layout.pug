@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+    <meta name="author" content="javferry.com">
+    meta(itemprop="description" name="description" content=des)
+    script(type="application/ld+json") !{JSON.stringify(websiteLDJSON, null, 2)}
+    script(type="application/ld+json") !{JSON.stringify(organizationLDJSON, null, 2)}
+    script(type="application/ld+json") !{JSON.stringify(specialLDJSON, null, 2)}
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:site" content="@javferry")
+    meta(name="twitter:creator" content="@javferry")
+    meta(property="og:url" content=og_url)
+    meta(property="og:title" content="Javferry.com")
+    meta(property="og:description" content=og_title)
+    meta(property="og:image" content=og_image)
+    style
+      include style.css
+  body
+    div(id="top-nav")
+      a(class="nav-link" href="/") Home
+      a(class="nav-link" href="/meta/category") Category
+      a(class="nav-link" href="/meta/pornstar") Pornstar
+      a(class="nav-link" href="/meta/director") Director
+      a(class="nav-link" href="/meta/studio") Studio
+    block content

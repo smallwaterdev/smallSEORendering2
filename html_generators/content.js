@@ -45,7 +45,10 @@ function genContentHtml(id, res){
                     organizationLDJSON: organizationLDJSON(),
                     specialLDJSON: breadcrumbLDJSON(content),
                     content_:content,
-                    recommendContents: recommendContents
+                    recommendContents: recommendContents,
+                    og_url:`http://www.javferry.com/content/${content._id}`,
+                    og_title: content.title,
+                    og_image: content.imgSummaryUrl
                 });
             });
         }else if(result.success){
